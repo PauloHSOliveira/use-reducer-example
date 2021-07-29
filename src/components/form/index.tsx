@@ -2,6 +2,7 @@ import React, {useReducer} from 'react'
 import { Input, Button, Form} from 'antd'
 import {formReducer} from '../../store/reducer'
 import {ACTIONS} from '../../types'
+import {button_styles,form_styles,input_styles} from './styles'
 
 const initialState = {
     email:'',
@@ -27,10 +28,10 @@ const FormFC:React.FC = () => {
     }
 
     return (
-        <Form style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+        <Form style={form_styles}>
             <Input placeholder="Insira seu e-mail" name="email" onChange={handleChange}/>
-            <Input placeholder="Insira sua senha" name="password" onChange={handleChange} style={{marginTop:'20px'}}/>
-            <Button style={{marginTop:'10px'}} onClick={handleSubmit}>Teste</Button>
+            <Input placeholder="Insira sua senha" name="password" onChange={handleChange} style={input_styles}/>
+            <Button style={button_styles} onClick={handleSubmit}>Teste</Button>
         </Form>
     )
 }
